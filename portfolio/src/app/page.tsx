@@ -2,6 +2,9 @@ import styles from "./page.module.css";
 import Header from "./components/header";
 import Nav from "./components/nav";
 import TerminalBox from "./components/terminalBox";
+import Projects from "./components/Projects";
+// import Contact from "./components/contact";
+import Footer from "./components/footer";
 
 export default function Home() {
   return (
@@ -9,6 +12,9 @@ export default function Home() {
       <Nav />
       <Header />
       <TerminalBox />
+      <Projects />
+      {/* <Contact /> */}
+      <Footer />
     </div>
   );
 }
