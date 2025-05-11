@@ -22,7 +22,7 @@ export default function Projects() {
     {
       id: 3,
       title: "Penicillium-detection-in-citrus-sinensis",
-      image: "/Penicillium.png",
+      image: "/penicillium.png",
       description: "Improving the detection of penicillium in citrus sinensis with a CNN.",
       tags: ["Tensorflow", "Pandas", "Python"],
       sourceUrl: "https://github.com/PPilot2/Penicillium-detection-in-citrus-sinensis"
