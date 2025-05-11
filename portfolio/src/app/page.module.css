@@ -468,3 +468,36 @@
     font-size: 20px;
   }
 }
+
+.notFoundContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: var(--font-fira-code), monospace;
+  min-height: 100vh; /* This makes the container take full viewport height */
+  padding: 2rem;
+}
+
+.notFoundContainer a { /* Note: Link components render as <a> tags */
+  text-decoration: underline;
+}
+
+.notFoundContainer h1 {
+  font-weight: 450;
+  font-size: 50px;
+  margin: 0.5rem 0; /* Add some vertical spacing */
+}
+
+.notFoundContainer span {
+  font-weight: 450;
+  font-size: 100px;
+  margin: 0.5rem 0; /* Add some vertical spacing */
+}
+
+.notFoundContainer h2 {
+  font-weight: 450;
+  font-size: 35px;
+  margin: 0.5rem 0; /* Add some vertical spacing */
+}

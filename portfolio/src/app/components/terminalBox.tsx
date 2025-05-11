@@ -4,7 +4,7 @@ import styles from "../page.module.css";
 
 export default function Home() {
   const inputRef = useRef<HTMLDivElement>(null);
-  const [selectedProject, setSelectedProject] = useState("Jotted");
+  const [selectedProject, setSelectedProject] = useState("Dev Extension");
   const [isHidden, setIsHidden] = useState(true);
   const projects = [
     { name: "Dev Extension", id: 4 },

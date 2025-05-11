@@ -36,6 +36,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="description" content="Prahalad Anand's Portfolio" />
+        <meta name="keywords" content="Web Developer, AI, AI Developer, Machine Learning, Machine Learning Developer, Design, Designer, Graphic Design" />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} ${firaCode.variable} ${inter.variable}`}>
         {children}
       </body>
