@@ -449,7 +449,7 @@
   text-decoration: underline;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 760px) {
   .footer {
     padding: 1.5rem 0;
   }
@@ -459,6 +459,16 @@
   }
   .contactContainer h2 {
     font-size: 20px;
+  }
+  .inputWrapper {
+    display: none;
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .container {
+    width: 90%;
   }
 }
 
