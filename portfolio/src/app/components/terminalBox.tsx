@@ -7,10 +7,11 @@ export default function Home() {
   const [selectedProject, setSelectedProject] = useState("Jotted");
   const [isHidden, setIsHidden] = useState(true);
   const projects = [
-    { name: "Jotted", id: 4 },
+    { name: "Dev Extension", id: 4 },
     { name: "JSON, CSV, and XML Data Generation", id: 2 },
     { name: "K-Shot GAN Synthetic Data", id: 1 },
     { name: "Penicillium Detection", id: 3 },
+    { name: "Portfolio Website", id: 5 },
   ];
 
   useEffect(() => {
@@ -76,7 +77,7 @@ export default function Home() {
 
         <div>
           <code>&gt; print(Prahalad[&quot;projects&quot;])</code>
-          <p>[&quot;Jotted&quot;, &quot;Data Visualizer&quot;, &quot;K-Shot GAN Synthetic Data&quot;, &quot;Penicillium Detection&quot;]</p>
+          <p>[&quot;Dev Extension&quot;, &quot;Data Visualizer&quot;, &quot;K-Shot GAN Synthetic Data&quot;, &quot;Penicillium Detection&quot;]</p>
         </div>
 
         <div 

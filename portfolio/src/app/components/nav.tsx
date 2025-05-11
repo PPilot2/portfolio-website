@@ -30,7 +30,6 @@ export default function Nav() {
         >
           Contact
         </a>
-        <a href="/blog">Blog</a>
       </div>
     </div>
   );

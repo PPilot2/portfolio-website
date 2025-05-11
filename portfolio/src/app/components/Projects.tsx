@@ -6,7 +6,7 @@ export default function Projects() {
     {
       id: 1,
       title: "K-shot-GAN-synthetic-data",
-      image: "/image.png",
+      image: "/kshot.png",
       description: "Improving the generation of synthetic data in LLMs using k-shot prompting and a GAN.",
       tags: ["Tensorflow", "PyTorch", "Pandas"],
       sourceUrl: "https://github.com/PPilot2/k_shot-GAN-synthetic-data"
@@ -14,7 +14,7 @@ export default function Projects() {
     {
       id: 2,
       title: "JSON, CSV, and XML Data Generation",
-      image: "/image.png",
+      image: "/json-vis.png",
       description: "Visualizes JSON, XML, and CSV data into beautiful flowcharts, trees, and data tables using GoJS.",
       tags: ["GoJS", "Flask", "Tensorflow"],
       sourceUrl: "https://github.com/PPilot2/JSON-Visualizer"
@@ -22,7 +22,7 @@ export default function Projects() {
     {
       id: 3,
       title: "Penicillium-detection-in-citrus-sinensis",
-      image: "/image.png",
+      image: "/Penicillium.png",
       description: "Improving the detection of penicillium in citrus sinensis with a CNN.",
       tags: ["Tensorflow", "Pandas", "Python"],
       sourceUrl: "https://github.com/PPilot2/Penicillium-detection-in-citrus-sinensis"
@@ -30,10 +30,18 @@ export default function Projects() {
     {
       id: 4,
       title: "Dev Extension",
-      image: "/image.png",
+      image: "/dev-extension.png",
       description: "A Chrome extension which links to Github accounts in order to display prs and keep up with the latest trends.",
       tags: ["HTML", "CSS", "JavaScript"],
       sourceUrl: "https://github.com/PPilot2/dev-extension"
+    },
+    {
+      id: 5,
+      title: "Portfolio Website",
+      image: "/portfolio-pic.png",
+      description: "A portfolio website built with Next.js and TypeScript.",
+      tags: ["Next.js", "TypeScript", "CSS"],
+      sourceUrl: "https://github.com/PPilot2/portfolio-website"
     }
   ];
 
