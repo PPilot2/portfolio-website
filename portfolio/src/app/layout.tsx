@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Fira_Code } from 'next/font/google';
 import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next"
 
 const firaCode = Fira_Code({ 
   subsets: ['latin'],
@@ -43,6 +44,7 @@ export default function RootLayout({
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} ${firaCode.variable} ${inter.variable}`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
