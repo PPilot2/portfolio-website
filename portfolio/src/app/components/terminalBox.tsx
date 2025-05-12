@@ -91,7 +91,7 @@ export default function Home() {
             tabIndex={0}
             onKeyDown={handleKeyPress}
           >
-            <code>&gt; Choose a project: </code>
+            <code>&gt; Choose a project(↑ ↓):</code>
             <span className={styles.displayedValue}>
               {selectedProject}
               <span className={styles.blinking}></span>
