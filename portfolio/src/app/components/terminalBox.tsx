@@ -67,7 +67,7 @@ export default function Home() {
 
         <div>
           <code>&gt; print(Prahalad[&quot;interests&quot;])</code>
-          <p>[&quot;basketball&quot;, &quot;cooking&quot;, &quot;madden&quot;]</p>
+          <p>[&quot;basketball&quot;, &quot;cooking&quot;, &quot;music&quot;]</p>
         </div>
 
         <div>
