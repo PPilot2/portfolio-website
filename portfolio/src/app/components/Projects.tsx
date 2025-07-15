@@ -13,7 +13,7 @@ const Projects: React.FC<ProjectProps> = ({themeColor}) => {
       title: "Collaborative Code Editor",
       image: "/codeEditor.png",
       description: "A web-based, multi-file code editor with live code execution, supporting multiple programming languages.",
-      tags: ["Next.js", "TypeScript", "CSS"],
+      tags: ["Monaco Editor", "Piston", "Typescript"],
       sourceUrl: "https://github.com/PPilot2/collaborative-code-editor"
     },
     {
