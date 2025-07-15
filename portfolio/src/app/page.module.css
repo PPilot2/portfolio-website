@@ -70,7 +70,6 @@
 .contactContainer a {
   text-overflow: ellipsis;
   white-space: nowrap;
-  cursor: not-allowed;
 }
 .contactContainer a:hover {
   text-decoration: underline;

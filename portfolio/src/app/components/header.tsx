@@ -21,7 +21,7 @@ const Header: React.FC<HeaderProps> = ({themeColor}) => {
     <div className={styles.headerContainer} style={{color: textColor}}>
       <h1>&gt; Prahalad Anand</h1>
       <div className={styles.contactContainer}>
-        <h2 id="contact"><a onClick={copyToClipboard} title="Email">prahaladanand6@gmail.com</a> | <a href="https://www.linkedin.com/in/prahalad-anand-524636297/" title="LinkedIn" target="_blank">LinkedIn</a> | <a href="https://github.com/PPilot2" title="Github" target="_blank">Github</a> | <a href="resume5.10.25.pdf" title="Resume" target="_blank">Resume</a></h2>
+        <h2 id="contact"><a onClick={copyToClipboard} title="Email">prahaladanand6@gmail.com</a> | <a href="https://www.linkedin.com/in/prahalad-anand-524636297/" title="LinkedIn" target="_blank">LinkedIn</a> | <a href="https://github.com/PPilot2" title="Github" target="_blank">Github</a> | <a href="resume5.10.25.pdf" title="Resume" target="_blank" style={{cursor: "not-allowed"}}>Resume</a></h2>
       </div>
       <h3>Web Developer and AI Researcher | Intern @ <Link href="https://www.splenta.com/" target="__blank">Splenta Systems</Link></h3>
     </div>

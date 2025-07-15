@@ -71,11 +71,6 @@ export default function Home() {
         </div>
 
         <div>
-          <code>&gt; print(Prahalad[&quot;education&quot;])</code>
-          <p>&quot;Vista Ridge High School&quot;</p>
-        </div>
-
-        <div>
           <code>&gt; print(Prahalad[&quot;projects&quot;])</code>
           <p>[&quot;Collaborative Code Editor&quot;, &quot;Portfolio Website&quot;, &quot;Data Generator&quot;, &quot;K-shot GAN Synthetic data&quot;, &quot;Penicillium Detection&quot;, &quot;Dev Extension&quot;]</p>
         </div>
