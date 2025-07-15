@@ -26,7 +26,6 @@ const Nav: React.FC<NavbarProps> = ({themeColor, onThemeClick}) => {
   const [textColor, setTextColor] = useState<string>("#000");
 
   useEffect(() => {
-    console.log(themeColor);
     setTextColor(themeColor === "dark" ? "#F2F4F8" : "#000");
   }, [themeColor]);
 

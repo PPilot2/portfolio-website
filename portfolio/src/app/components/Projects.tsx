@@ -65,7 +65,6 @@ const Projects: React.FC<ProjectProps> = ({themeColor}) => {
   const [linkColor, setLinkColor] = useState<string[]>(["#9A94BC","#8674eb"]);
 
   useEffect(() => {
-    console.log(themeColor);
     setTextColor(themeColor === "dark" ? "#F2F4F8" : "#000");
     setHrColor(themeColor === "dark" ? "#B8BACC" : "#595d7a");
     setBackgroundColor(themeColor === "dark" ? "#898EA9" : "#f1f1f1");

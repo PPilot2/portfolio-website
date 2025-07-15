@@ -10,12 +10,11 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({themeColor}) => {
   function copyToClipboard() {
     navigator.clipboard.writeText("prahaladanand6@gmail.com");
-    console.log("Email copied to clipboard!");
+    alert("Email copied to clipboard!");
   }
   const [textColor, setTextColor] = useState<string>("#000");
 
   useEffect(() => {
-    console.log(themeColor);
     setTextColor(themeColor === "dark" ? "#F2F4F8" : "#000");
   }, [themeColor]);
   return (
