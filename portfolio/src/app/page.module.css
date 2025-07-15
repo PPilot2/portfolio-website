@@ -41,7 +41,7 @@
   overflow: hidden;
   font-size: clamp(2rem, 8vw, 3.5rem);
   white-space: nowrap;
-  border-right: clamp(15px, 2vw, 30px) black solid;
+  border-right: clamp(15px, 2vw, 30px) solid;
   animation: typing 1s steps(22) forwards, blink 1s step-end infinite;
   width: fit-content;
   max-width: 100%;
@@ -72,10 +72,10 @@
 .contactContainer a {
   text-overflow: ellipsis;
   white-space: nowrap;
+  cursor: not-allowed;
 }
 .contactContainer a:hover {
   text-decoration: underline;
-  cursor: pointer;
 }
 
 
@@ -106,8 +106,22 @@
 .navElements {
   display: flex;
   flex-direction: row;
-  gap: clamp(1rem, 3vw, 2rem);
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; 
   flex-wrap: wrap;
+}
+
+.navLeft {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.navRight {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .boxContainer {
@@ -315,7 +329,7 @@
 }
 
 .projectsHeader hr {
-  border: 2px solid #595d7a;
+  border: 2px solid;
   height: 1px;
   background: #e2e8f0;
 }
@@ -330,7 +344,6 @@
 .project {
   display: flex;
   width: 100%;
-  background: #f1f1f1;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 10px 10px #b0b6e5;
@@ -365,7 +378,6 @@
   font-size: 1.5rem;
   margin: 0 0 1rem 0;
   font-weight: 450;
-  color: #1a202c;
 }
 
 .projectTags {
@@ -377,7 +389,6 @@
 
 .tag {
   background: #b6c6d6;
-  color: #2d3748;
   padding: 0.5rem 1rem;
   border-radius: 5px;
   font-size: 0.875rem;
@@ -394,16 +405,11 @@
 .sourceLink {
   display: inline-flex;
   align-items: center;
-  color: #9A94BC;
   font-weight: 600;
   text-decoration: none;
   transition: color 0.2s ease;
   margin-top: auto;
   align-self: flex-start;
-}
-
-.sourceLink:hover {
-  color: #8674eb;
 }
 
 .sourceLink::after {
@@ -433,7 +439,6 @@
 .footer {
   width: 100%;
   margin-top: 2rem;
-  border-top: 1px solid #eaeaea;
 }
 
 .footerContent {

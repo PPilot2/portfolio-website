@@ -17,7 +17,7 @@ Welcome to my **portfolio website** — a place where I showcase my projects, sk
 - 🧑‍💼 About Me section
 - 🛠️ Projects showcase with links
 - 📱 Fully responsive layout
-- 🌙 Dark mode (coming soon)
+- 🌙 Dark mode
 
 ---
 

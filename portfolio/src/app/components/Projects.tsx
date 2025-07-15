@@ -1,7 +1,12 @@
 import styles from "../page.module.css";
 import Image from 'next/image';
+import { useState, useEffect } from "react";
 
-export default function Projects() {
+interface ProjectProps {
+  themeColor: string,
+}
+
+const Projects: React.FC<ProjectProps> = ({themeColor}) => {
   const projectsData = [
     {
       id: 1,
@@ -52,12 +57,27 @@ export default function Projects() {
       sourceUrl: "https://github.com/PPilot2/dev-extension"
     },
   ];
+  const [textColor, setTextColor] = useState<string>("#000");
+  const [hrColor, setHrColor] = useState<string>("#595d7a");
+  const [backgroundColor, setBackgroundColor] = useState<string>("#f1f1f1");
+  const [subHeadingColor, setsubHeadingColor] = useState<string>("#1a202c");
+  const [tagColor, setTagColor] = useState<string>("#2d3748");
+  const [linkColor, setLinkColor] = useState<string[]>(["#9A94BC","#8674eb"]);
 
+  useEffect(() => {
+    console.log(themeColor);
+    setTextColor(themeColor === "dark" ? "#F2F4F8" : "#000");
+    setHrColor(themeColor === "dark" ? "#B8BACC" : "#595d7a");
+    setBackgroundColor(themeColor === "dark" ? "#898EA9" : "#f1f1f1");
+    setTagColor(themeColor === "dark" ? "#000" : "#000");
+    setsubHeadingColor(themeColor === "dark" ? "#f1f1f1" : "#000");
+    setLinkColor(themeColor === "dark" ? ["#E0DBFA", "#bab6cdff"] : ["#9A94BC", "#8674eb"]);
+  }, [themeColor]);
   return (
-    <div className={styles.projectsContainer}>
+    <div className={styles.projectsContainer} style={{color: textColor}}>
       <div id="projects" className={styles.projectsHeader}>
         <h1>Projects</h1>
-        <hr />
+        <hr style={{borderColor: hrColor}}/>
       </div>
       
       <div className={styles.projectsGrid}>
@@ -70,7 +90,7 @@ export default function Projects() {
             rel="noopener noreferrer"
             className={styles.projectLink}
           >
-            <div className={styles.project}>
+            <div className={styles.project} style={{backgroundColor: backgroundColor}}>
               <div className={styles.projectImageContainer}>
                 <Image 
                   src={project.image}
@@ -81,15 +101,23 @@ export default function Projects() {
                 />
               </div>
               <div className={styles.projectContent}>
-                <h2>{project.title}</h2>
+                <h2 style={{color: textColor}}>{project.title}</h2>
                 <div className={styles.projectTags}>
                   {project.tags.map((tag, index) => (
-                    <span key={index} className={styles.tag}>{tag}</span>
+                    <span key={index} className={styles.tag} style={{color: tagColor}}>{tag}</span>
                   ))}
                 </div>
-                <p>{project.description}</p>
-                <div className={styles.sourceLink}>
+                <p style={{color: subHeadingColor}}>{project.description}</p>
+                <div className={styles.sourceLink} id="customTag">
                   View Project
+                  <style jsx>{`
+                    #customTag {
+                      color: ${linkColor[0]};
+                    }
+                    #customTag:hover {
+                      color: ${linkColor[1]};
+                    }
+                  `}</style>
                 </div>
               </div>
             </div>
@@ -99,3 +127,5 @@ export default function Projects() {
     </div>
   );
 }
+
+export default Projects;
