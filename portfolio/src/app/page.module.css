@@ -49,9 +49,7 @@
 
 .headerContainer h3 {
   font-weight: 350;
-  overflow: hidden;
   font-size: clamp(1rem, 4vw, 1.5rem);
-  white-space: nowrap;
 }
 
 .headerContainer a:hover {
@@ -109,7 +107,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%; 
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .navLeft {
@@ -122,6 +120,24 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+@media (max-width: 768px) {
+  .navElements {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .navLeft {
+    flex-grow: 1;
+  }
+
+  .navRight {
+    margin-left: auto;
+  }
+
+  .contactContainer h2 {
+    font-size: 1.3rem;
+  }
 }
 
 .boxContainer {
@@ -465,9 +481,6 @@
   
   .footerContent {
     padding: 0 1rem;
-  }
-  .contactContainer h2 {
-    font-size: 20px;
   }
   .inputWrapper {
     display: none;

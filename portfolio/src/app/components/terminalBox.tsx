@@ -4,7 +4,6 @@ import styles from "../page.module.css";
 
 export default function Home() {
   const inputRef = useRef<HTMLDivElement>(null);
-  const [selectedProject, setSelectedProject] = useState("Dev Extension");
   const [isHidden, setIsHidden] = useState(true);
   const projects = [
     { name: "Collaborative Code Editor", id: 1},
@@ -14,6 +13,7 @@ export default function Home() {
     { name: "Penicillium Detection", id: 5 },
     { name: "Dev Extension", id: 6 },
   ];
+  const [selectedProject, setSelectedProject] = useState(projects[0]["name"]);
 
   useEffect(() => {
     inputRef.current?.focus();
@@ -77,7 +77,7 @@ export default function Home() {
 
         <div>
           <code>&gt; print(Prahalad[&quot;projects&quot;])</code>
-          <p>[&quot;Dev Extension&quot;, &quot;Data Visualizer&quot;, &quot;K-Shot GAN Synthetic Data&quot;, &quot;Penicillium Detection&quot;]</p>
+          <p>[&quot;Collaborative Code Editor&quot;, &quot;Portfolio Website&quot;, &quot;Data Generator&quot;, &quot;K-shot GAN Synthetic data&quot;, &quot;Penicillium Detection&quot;, &quot;Dev Extension&quot;]</p>
         </div>
 
         <div 
