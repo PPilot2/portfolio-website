@@ -10,12 +10,12 @@ interface NavbarProps {
 }
 
 const Nav: React.FC<NavbarProps> = ({themeColor, onThemeClick}) => {
-  const handleScroll = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+//   const handleScroll = (id: string) => {
+//     const element = document.getElementById(id);
+//     if (element) {
+//       element.scrollIntoView({ behavior: 'smooth' });
+//     }
+//   };
   let theme = "light";
   const checkThemeChange = async () => {
     if (themeColor != undefined) {
@@ -34,25 +34,8 @@ const Nav: React.FC<NavbarProps> = ({themeColor, onThemeClick}) => {
     <div className={styles.navContainer} style={{color: textColor}}>
       <div className={styles.navElements}>
         <section className={styles.navLeft}>
-          <a 
-            href="#projects" 
-            onClick={(e) => {
-              e.preventDefault();
-              handleScroll('projects');
-            }}
-          >
-            Projects
-          </a>
-          <a 
-            href="#contact" 
-            onClick={(e) => {
-              e.preventDefault();
-              handleScroll('contact');
-            }}
-          >
-            Contact
-          </a>
-          <Link href="/blog">Blog</Link>
+          <Link href="/" title="Home">Home</Link>
+          <Link href="/blog" title="Blog">Blog</Link>
           
         </section>
         <button className={styles.navRight} title={theme} onClick={onThemeClick}>

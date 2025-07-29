@@ -11,7 +11,7 @@ const Projects: React.FC<ProjectProps> = ({themeColor}) => {
     {
       id: 1,
       title: "Collaborative Code Editor",
-      image: "/codeEditor.png",
+      image: "/codeEditor-pic.png",
       description: "A web-based, multi-file code editor with live code execution, supporting multiple programming languages.",
       tags: ["Monaco Editor", "Piston", "Typescript"],
       sourceUrl: "https://github.com/PPilot2/collaborative-code-editor"
@@ -27,7 +27,7 @@ const Projects: React.FC<ProjectProps> = ({themeColor}) => {
     {
       id: 3,
       title: "JSON, CSV, and XML Data Generation",
-      image: "/json-vis.png",
+      image: "/json-pic.png",
       description: "Visualizes JSON, XML, and CSV data into beautiful flowcharts, trees, and data tables using GoJS.",
       tags: ["GoJS", "Flask", "Tensorflow"],
       sourceUrl: "https://github.com/PPilot2/JSON-Visualizer"
@@ -43,7 +43,7 @@ const Projects: React.FC<ProjectProps> = ({themeColor}) => {
     {
       id: 5,
       title: "Penicillium-detection-in-citrus-sinensis",
-      image: "/penicillium.png",
+      image: "/penicillium-pic.png",
       description: "Improving the detection of penicillium in citrus sinensis with a CNN.",
       tags: ["Tensorflow", "Pandas", "Python"],
       sourceUrl: "https://github.com/PPilot2/Penicillium-detection-in-citrus-sinensis"

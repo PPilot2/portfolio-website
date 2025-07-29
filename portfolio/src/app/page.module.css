@@ -29,7 +29,7 @@
   font-family: 'Fira Code', monospace;
 }
 
-.headerContainer {
+.headerContainer, .blogHeaderContainer {
   display: flex;
   flex-direction: column;
   padding: 2rem 0;
@@ -45,6 +45,27 @@
   animation: typing 1s steps(22) forwards, blink 1s step-end infinite;
   width: fit-content;
   max-width: 100%;
+}
+
+.blogHeaderContainer h1 {
+  font-weight: 450;
+  overflow: hidden;
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  white-space: nowrap;
+  border-right: clamp(15px, 2vw, 30px) solid;
+  animation: typing 1s steps(22) forwards, blink 1s step-end infinite;
+  width: fit-content;
+  max-width: fit-content;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 17ch }
+}
+
+@keyframes blink {
+  from, to { border-color: transparent }
+  50% { border-color: inherit }
 }
 
 .headerContainer h3 {
@@ -73,22 +94,6 @@
 }
 .contactContainer a:hover {
   text-decoration: underline;
-}
-
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: min(36rem, 100%);
-  }
-}
-
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
 }
 
 .navContainer {
@@ -148,7 +153,7 @@
   height: auto;
   max-height: 60vh;
   border-radius: 10px;
-  box-shadow: 0 10px 10px #b0b6e5;
+  box-shadow: 0 10px 30px #b0b6e5;
 }
 
 .boxHeader {
@@ -173,10 +178,11 @@
   color: white;
   display: flex;
   flex-direction: column;
+  position: relative;
   gap: 1.5rem;
   padding: 2rem;
   font-size: clamp(1rem, 2vw, 1.125rem);
-  width: 95%;
+  width: 100%;
   overflow-y: auto;
   flex-grow: 1;
 }
@@ -324,7 +330,7 @@
 }
 
 .navContainer a:hover {
-  color: #2d3748; /* Add your preferred hover color */
+  color: #bab6cdff; /* Add your preferred hover color */
 }
 
 .projectsContainer {
@@ -361,7 +367,7 @@
   width: 100%;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 10px 10px #b0b6e5;
+  box-shadow: 0 10px 30px #b0b6e5;
   transition: transform 0.2s ease;
   scroll-margin-top: 20px;
 }
@@ -400,6 +406,8 @@
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 1.5rem;
+  backdrop-filter: none;
+  box-shadow: none;
 }
 
 .tag {
@@ -466,6 +474,7 @@
   color: #4299e1;
   text-decoration: none;
   transition: color 0.2s ease;
+  font-weight: 600;
 }
 
 .footerLink:hover {
@@ -524,4 +533,244 @@
   font-weight: 450;
   font-size: 35px;
   margin: 0.5rem 0; /* Add some vertical spacing */
+}
+
+/* Main Container */
+.carouselContainer {
+  height: 71vh;
+  width: 100%;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 10px 30px #b0b6e5;
+  margin-bottom: 1rem;
+}
+
+/* Background Styles */
+.carouselBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.carouselImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.carouselOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to top,
+    rgba(20, 22, 35, 1) 10%,
+    rgba(40, 42, 60, 0.3) 60%,
+    rgba(89, 93, 122, 0) 100%
+  );
+  z-index: 2;
+}
+
+/* Content Styles */
+.carouselContent {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.carouselBoxHeader {
+  display: flex;
+  gap: 0.5rem;
+  width: fit-content;
+  background: rgba(0, 0, 0, 1);
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.trafficLight {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.red {
+  background: #ff5f56;
+}
+
+.yellow {
+  background: #ffbd2e;
+}
+
+.green {
+  background: #27c93f;
+}
+
+.textContent {
+  width: 100%;
+  margin-bottom: 2rem;
+  color: #E0DBFA;
+  background: linear-gradient(
+    to bottom,
+    rgba(20, 22, 35, 1) 15%,
+    rgba(40, 42, 60, 0.3) 80%,
+    rgba(89, 93, 122, 0) 100%
+  );
+  padding: 2rem;
+  border-radius: 0; 
+  box-sizing: border-box;
+}
+
+.blogTitle {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  transition: color 0.3s ease-in-out;
+}
+
+.blogTitle:hover {
+  color: #bab6cdff;
+}
+
+.blogLink {
+  color: inherit;
+  text-decoration: none;
+}
+
+.blogExcerpt {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Thumbnail Navigation */
+.thumbnailContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 0.4rem;
+}
+
+.thumbnail {
+  cursor: pointer;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  overflow: hidden;
+  opacity: 0.7;
+  transform: scale(1);
+  transition: all 0.2s ease;
+}
+
+.thumbnail:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.activeThumbnail {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.thumbnailImage {
+  object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+  .carouselContainer {
+    height: 70vh;
+  }
+  .textContent {
+    width: calc(100% + 2rem);
+  }
+  /* work on it later */
+}
+@media (max-width: 768px) {
+  .carouselContainer {
+    height: 60vh;
+  }
+  
+  .textContent {
+    padding: 1.5rem;
+    /* No side padding on mobile */
+    padding-left: 0;
+    padding-right: 0;
+    /* Add back minimal side padding for text */
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: calc(100% - 2rem);
+  }
+  
+  .blogTitle {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .blogExcerpt {
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .thumbnail {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carouselContainer {
+    height: 65vh;
+    border-radius: 8px;
+    overflow: hidden; /* Ensure no overflow causes gaps */
+  }
+  
+  .carouselContent {
+    padding: 0; /* Remove all padding */
+  }
+  
+  .textContent {
+    padding: 1rem; /* Keep some padding for readability */
+    margin: 0; /* Remove all margins */
+    width: 100%;
+    border-radius: 0; /* Remove border radius for full width */
+  }
+  
+  .thumbnailContainer {
+    margin: 0; /* Remove margins */
+    border-radius: 0; /* Full width */
+  }
+  
+  .blogTitle {
+    font-size: 1.3rem;
+  }
+  
+  .blogExcerpt {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .thumbnail {
+    width: 35px;
+    height: 35px;
+    margin: 0 0.25rem; /* Small gap between thumbnails */
+  }
+  
+  .activeThumbnail {
+    border-width: 2px;
+  }
 }
