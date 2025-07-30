@@ -1,6 +1,7 @@
 import styles from "../page.module.css";
 import Image from 'next/image';
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 interface ProjectProps {
   themeColor: string,
@@ -10,14 +11,6 @@ const Projects: React.FC<ProjectProps> = ({themeColor}) => {
   const projectsData = [
     {
       id: 1,
-      title: "Collaborative Code Editor",
-      image: "/codeEditor-pic.png",
-      description: "A web-based, multi-file code editor with live code execution, supporting multiple programming languages.",
-      tags: ["Monaco Editor", "Piston", "Typescript"],
-      sourceUrl: "https://github.com/PPilot2/collaborative-code-editor"
-    },
-    {
-      id: 2,
       title: "Portfolio Website",
       image: "/portfolio-pic.png",
       description: "A portfolio website built with Next.js and TypeScript.",
@@ -25,12 +18,20 @@ const Projects: React.FC<ProjectProps> = ({themeColor}) => {
       sourceUrl: "https://github.com/PPilot2/portfolio-website"
     },
     {
-      id: 3,
+      id: 2,
       title: "JSON, CSV, and XML Data Generation",
       image: "/json-pic.png",
       description: "Visualizes JSON, XML, and CSV data into beautiful flowcharts, trees, and data tables using GoJS.",
       tags: ["GoJS", "Flask", "Tensorflow"],
       sourceUrl: "https://github.com/PPilot2/JSON-Visualizer"
+    },
+    {
+      id: 3,
+      title: "Collaborative Code Editor",
+      image: "/codeEditor-pic.png",
+      description: "A web-based, multi-file code editor with live code execution, supporting multiple programming languages.",
+      tags: ["Monaco Editor", "Piston", "Typescript"],
+      sourceUrl: "https://github.com/PPilot2/collaborative-code-editor"
     },
     {
       id: 4,
@@ -42,7 +43,7 @@ const Projects: React.FC<ProjectProps> = ({themeColor}) => {
     },
     {
       id: 5,
-      title: "Penicillium-detection-in-citrus-sinensis",
+      title: "Enhancing penicillium detection in citrus sinensis",
       image: "/penicillium-pic.png",
       description: "Improving the detection of penicillium in citrus sinensis with a CNN.",
       tags: ["Tensorflow", "Pandas", "Python"],
@@ -81,10 +82,10 @@ const Projects: React.FC<ProjectProps> = ({themeColor}) => {
       
       <div className={styles.projectsGrid}>
         {projectsData.map((project) => (
-          <a 
+          <Link
             key={project.id} 
             id={`project-${project.id}`} 
-            href={project.sourceUrl}
+            href={`/blog/${project.id}`}
             target="_blank"
             rel="noopener noreferrer"
             className={styles.projectLink}
@@ -99,7 +100,7 @@ const Projects: React.FC<ProjectProps> = ({themeColor}) => {
                   className={styles.projectImage}
                 />
               </div>
-              <div className={styles.projectContent}>
+              <div className={styles.projectContent} title={project.title}>
                 <h2 style={{color: textColor}}>{project.title}</h2>
                 <div className={styles.projectTags}>
                   {project.tags.map((tag, index) => (
@@ -120,7 +121,7 @@ const Projects: React.FC<ProjectProps> = ({themeColor}) => {
                 </div>
               </div>
             </div>
-          </a>
+          </Link>
         ))}
       </div>
     </div>
