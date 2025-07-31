@@ -13,22 +13,14 @@ export const CenterAlert = ({
   onClose 
 }: CenterAlertProps) => {
   const [isVisible, setIsVisible] = useState(true);
-  const [remainingTime, setRemainingTime] = useState(duration);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setRemainingTime(prev => {
-        if (prev <= 100) {
-          clearInterval(timer);
-          setIsVisible(false);
-          onClose();
-          return 0;
-        }
-        return prev - 100;
-      });
-    }, 100);
+    const timer = setTimeout(() => {
+      setIsVisible(false);
+      onClose();
+    }, duration);
 
-    return () => clearInterval(timer);
+    return () => clearTimeout(timer);
   }, [onClose, duration]);
 
   if (!isVisible) return null;
@@ -65,11 +57,17 @@ export const CenterAlert = ({
           style={{
             height: '100%',
             backgroundColor: 'white',
-            width: `${(remainingTime / duration) * 100}%`,
-            transition: 'width 0.1s linear',
+            width: `${(duration / duration) * 100}%`,
+            animation: `progress ${duration}ms linear forwards`,
           }}
         />
       </div>
+      <style jsx>{`
+        @keyframes progress {
+          from { width: 100%; }
+          to { width: 0%; }
+        }
+      `}</style>
     </div>
   );
 };

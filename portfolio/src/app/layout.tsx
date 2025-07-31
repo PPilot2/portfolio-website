@@ -4,7 +4,6 @@ import "./globals.css";
 import { Fira_Code } from "next/font/google";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
-
 const firaCode = Fira_Code({
   subsets: ["latin"],
   variable: "--font-fira-code",

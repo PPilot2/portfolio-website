@@ -4,7 +4,6 @@ import { useParams } from "next/navigation";
 import styles from "../../page.module.css";
 import { useEffect, useState } from "react";
 import Nav from "@/app/components/blognav";
-import CodeBlock from "@/app/components/codeblock";
 
 interface BlogPost {
   id: number;
@@ -22,6 +21,7 @@ export default function BlogPostPage() {
   const [post, setPost] = useState<BlogPost | null>(null);
   const [theme, setTheme] = useState<"light" | "dark">("light");
   const [textColor, setTextColor] = useState("#000");
+
   // const [backgroundColor, setBackgroundColor] = useState<string>("#e2e8f0");
   // const [cardColor, setCardColor] = useState<string>("#f1f1f1");
 
@@ -116,7 +116,6 @@ export default function BlogPostPage() {
           </div>
           <div className={styles.postContent}>
             <p>{post.content}</p>
-            <CodeBlock language="typescript" code="(num) => num + 1" themeColor={theme}/>
           </div>
         </article>
       </div>

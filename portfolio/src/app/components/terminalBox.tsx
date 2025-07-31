@@ -6,9 +6,9 @@ export default function Home() {
   const inputRef = useRef<HTMLDivElement>(null);
   const [isHidden, setIsHidden] = useState(true);
   const projects = [
-    { name: "Collaborative Code Editor", id: 1},
-    { name: "Portfolio Website", id: 2 },
-    { name: "JSON, CSV, and XML Data Generation", id: 3 },
+    { name: "Portfolio Website", id: 1 },
+    { name: "JSON, CSV, and XML Data Generation", id: 2 },
+    { name: "Collaborative Code Editor", id: 3},
     { name: "K-Shot GAN Synthetic Data", id: 4 },
     { name: "Penicillium Detection", id: 5 },
     { name: "Dev Extension", id: 6 },
