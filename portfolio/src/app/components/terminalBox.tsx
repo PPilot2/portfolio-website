@@ -6,12 +6,12 @@ export default function Home() {
   const inputRef = useRef<HTMLDivElement>(null);
   const [isHidden, setIsHidden] = useState(true);
   const projects = [
-    { name: "Portfolio Website", id: 1 },
-    { name: "JSON, CSV, and XML Data Generation", id: 2 },
-    { name: "Collaborative Code Editor", id: 3},
-    { name: "K-Shot GAN Synthetic Data", id: 4 },
-    { name: "Penicillium Detection", id: 5 },
-    { name: "Dev Extension", id: 6 },
+    { name: "Pathfinding Visualizer", id: 1 },
+    { name: "Portfolio Website", id: 2 },
+    { name: "JSON, CSV, and XML Data Generation", id: 3 },
+    { name: "Collaborative Code Editor", id: 4},
+    { name: "K-Shot GAN Synthetic Data", id: 5 },
+    { name: "Penicillium Detection", id: 6 },
   ];
   const [selectedProject, setSelectedProject] = useState(projects[0]["name"]);
 
@@ -72,7 +72,7 @@ export default function Home() {
 
         <div>
           <code>&gt; print(Prahalad[&quot;projects&quot;])</code>
-          <p>[&quot;Collaborative Code Editor&quot;, &quot;Portfolio Website&quot;, &quot;Data Generator&quot;, &quot;K-shot GAN Synthetic data&quot;, &quot;Penicillium Detection&quot;, &quot;Dev Extension&quot;]</p>
+          <p>[&quot;Pathfinding Visualizer&quot;, &quot;Collaborative Code Editor&quot;, &quot;Portfolio Website&quot;, &quot;JSON Visualizer&quot;, &quot;K-shot GAN Synthetic data&quot;, &quot;Penicillium Detection&quot;]</p>
         </div>
 
         <div 

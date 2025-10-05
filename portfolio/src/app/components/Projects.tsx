@@ -11,6 +11,14 @@ const Projects: React.FC<ProjectProps> = ({themeColor}) => {
   const projectsData = [
     {
       id: 1,
+      title: "Pathfinding Visualizer",
+      image: "/pathfinding-pic.png",
+      description: "Visualize popular pathfinding algorithms such as Dijkstra, A*, BFS, and DFS with interactive controls and animations.",
+      tags: ["Next JS", "Typescript", "Tailwind CSS"],
+      sourceUrl: "https://github.com/PPilot2/pathfindingvisualizer"
+    },
+    {
+      id: 2,
       title: "Portfolio Website",
       image: "/portfolio-pic.png",
       description: "A portfolio website built with Next.js and TypeScript.",
@@ -18,7 +26,7 @@ const Projects: React.FC<ProjectProps> = ({themeColor}) => {
       sourceUrl: "https://github.com/PPilot2/portfolio-website"
     },
     {
-      id: 2,
+      id: 3,
       title: "JSON, CSV, and XML Data Generation",
       image: "/json-pic.png",
       description: "Visualizes JSON, XML, and CSV data into beautiful flowcharts, trees, and data tables using GoJS.",
@@ -26,7 +34,7 @@ const Projects: React.FC<ProjectProps> = ({themeColor}) => {
       sourceUrl: "https://github.com/PPilot2/JSON-Visualizer"
     },
     {
-      id: 3,
+      id: 4,
       title: "Collaborative Code Editor",
       image: "/codeEditor-pic.png",
       description: "A web-based, multi-file code editor with live code execution, supporting multiple programming languages.",
@@ -34,7 +42,7 @@ const Projects: React.FC<ProjectProps> = ({themeColor}) => {
       sourceUrl: "https://github.com/PPilot2/collaborative-code-editor"
     },
     {
-      id: 4,
+      id: 5,
       title: "K-shot-GAN-synthetic-data",
       image: "/kshot.png",
       description: "Improving the generation of synthetic data in LLMs using k-shot prompting and a GAN.",
@@ -42,20 +50,12 @@ const Projects: React.FC<ProjectProps> = ({themeColor}) => {
       sourceUrl: "https://github.com/PPilot2/k_shot-GAN-synthetic-data"
     },
     {
-      id: 5,
+      id: 6,
       title: "Enhancing penicillium detection in citrus sinensis",
       image: "/penicillium-pic.png",
       description: "Improving the detection of penicillium in citrus sinensis with a CNN.",
       tags: ["Tensorflow", "Pandas", "Python"],
       sourceUrl: "https://github.com/PPilot2/Penicillium-detection-in-citrus-sinensis"
-    },
-    {
-      id: 6,
-      title: "Dev Extension",
-      image: "/dev-extension.png",
-      description: "A Chrome extension which links to Github accounts in order to display prs and keep up with the latest trends.",
-      tags: ["HTML", "CSS", "JavaScript"],
-      sourceUrl: "https://github.com/PPilot2/dev-extension"
     },
   ];
   const [textColor, setTextColor] = useState<string>("#000");
