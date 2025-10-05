@@ -34,6 +34,15 @@ const Nav: React.FC<NavbarProps> = ({themeColor, onThemeClick}) => {
     <div className={styles.navContainer} style={{color: textColor}}>
       <div className={styles.navElements}>
         <section className={styles.navLeft}>
+           <a 
+            href="#contact" 
+            onClick={(e) => {
+              e.preventDefault();
+              handleScroll('contact');
+            }}
+          >
+            Contact
+          </a>
           <a 
             href="#projects" 
             onClick={(e) => {
@@ -42,15 +51,6 @@ const Nav: React.FC<NavbarProps> = ({themeColor, onThemeClick}) => {
             }}
           >
             Projects
-          </a>
-          <a 
-            href="#contact" 
-            onClick={(e) => {
-              e.preventDefault();
-              handleScroll('contact');
-            }}
-          >
-            Contact
           </a>
           <Link href="/blog">Blog</Link>
           

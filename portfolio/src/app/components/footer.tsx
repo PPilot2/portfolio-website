@@ -16,7 +16,7 @@ const Footer: React.FC<FooterProps> = ({themeColor}) => {
   return (
     <footer className={styles.footer} style={{color:textColor}}>
       <div className={styles.footerContent}>
-        <p>Made with ❤️ by <a href="https://github.com/PPilot2/portfolio-website" className={styles.footerLink} target="__blank">Prahalad Anand</a></p>
+        <p>Made with ❤️ by <a href="https://github.com/PPilot2" className={styles.footerLink} target="__blank">Prahalad Anand</a></p>
       </div>
     </footer>
   );
