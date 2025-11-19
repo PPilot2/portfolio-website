@@ -1,7 +1,7 @@
 import styles from "../page.module.css";
 import Image from "next/image";
-import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 
 interface ProjectProps {
   themeColor: string;
@@ -88,21 +88,19 @@ const Projects: React.FC<ProjectProps> = ({ themeColor }) => {
         <hr style={{ borderColor: hrColor }} />
       </div>
 
-      <div className={styles.projectsGrid}>
+      <div className={styles.projectsGrid} suppressHydrationWarning={true}>
         {projectsData.map((project) => (
-          <Link
+          <div
             key={project.id}
             id={`project-${project.id}`}
-            // href={`/blog/${project.id}`}
-            href={project.sourceUrl}
-            target="_blank"
-            rel="noopener noreferrer"
             className={styles.projectLink}
+            onClick={(e) => {
+              if ((e.target as HTMLElement).closest("a")) return;
+              window.open(project.sourceUrl, "_blank");
+            }}
+            style={{ cursor: "pointer" }}
           >
-            <div
-              className={styles.project}
-              style={{ backgroundColor: backgroundColor }}
-            >
+            <div className={styles.project} style={{ backgroundColor }}>
               <div className={styles.projectImageContainer}>
                 <Image
                   src={project.image}
@@ -112,8 +110,10 @@ const Projects: React.FC<ProjectProps> = ({ themeColor }) => {
                   className={styles.projectImage}
                 />
               </div>
+
               <div className={styles.projectContent} title={project.title}>
                 <h2 style={{ color: textColor }}>{project.title}</h2>
+
                 <div className={styles.projectTags}>
                   {project.tags.map((tag, index) => (
                     <span
@@ -125,64 +125,89 @@ const Projects: React.FC<ProjectProps> = ({ themeColor }) => {
                     </span>
                   ))}
                 </div>
+
                 <p style={{ color: subHeadingColor }}>{project.description}</p>
+
                 <div style={{ display: "flex", gap: "10px" }}>
-                  <div className={styles.sourceLink} id="customTag">
-                    <a
-                      href={`/blog/${project.id}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ color: linkColor[0] }}
-                      onMouseEnter={(e) =>
-                        (e.currentTarget.style.color = linkColor[1])
-                      }
-                      onMouseLeave={(e) =>
-                        (e.currentTarget.style.color = linkColor[0])
-                      }
+                  <Link
+                    href={`/blog/${project.id}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      color: linkColor[0],
+                      display: "inline-flex",
+                      alignItems: "center",
+                      transition: "color .2s ease",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.color = linkColor[1];
+                      const arrow = e.currentTarget.querySelector(
+                        ".arrow"
+                      ) as HTMLElement;
+                      if (arrow) arrow.style.transform = "translateX(4px)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.color = linkColor[0];
+                      const arrow = e.currentTarget.querySelector(
+                        ".arrow"
+                      ) as HTMLElement;
+                      if (arrow) arrow.style.transform = "translateX(0)";
+                    }}
+                  >
+                    View Blog Post
+                    <span
+                      className="arrow"
+                      style={{
+                        marginLeft: "4px",
+                        display: "inline-block",
+                        transition: "transform .2s ease",
+                      }}
                     >
-                      View Blog Post
-                      <style jsx>{`
-                        #customTag {
-                          color: ${linkColor[0]};
-                        }
-                        #customTag:hover {
-                          color: ${linkColor[1]};
-                        }
-                      `}</style>
-                      
-                    </a>
-                    
-                  </div>
-                  <div className={styles.sourceLink} id="customTag">
-                    <a
-                      href={project.sourceUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ color: linkColor[0] }}
-                      onMouseEnter={(e) =>
-                        (e.currentTarget.style.color = linkColor[1])
-                      }
-                      onMouseLeave={(e) =>
-                        (e.currentTarget.style.color = linkColor[0])
-                      }
+                      →
+                    </span>
+                  </Link>
+
+                  <Link
+                    href={project.sourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      color: linkColor[0],
+                      display: "inline-flex",
+                      alignItems: "center",
+                      transition: "color .2s ease",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.color = linkColor[1];
+                      const arrow = e.currentTarget.querySelector(
+                        ".arrow"
+                      ) as HTMLElement;
+                      if (arrow) arrow.style.transform = "translateX(4px)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.color = linkColor[0];
+                      const arrow = e.currentTarget.querySelector(
+                        ".arrow"
+                      ) as HTMLElement;
+                      if (arrow) arrow.style.transform = "translateX(0)";
+                    }}
+                  >
+                    View Source
+                    <span
+                      className="arrow"
+                      style={{
+                        marginLeft: "4px",
+                        display: "inline-block",
+                        transition: "transform .2s ease",
+                      }}
                     >
-                      View Source
-                      <style jsx>{`
-                        #customTag {
-                          color: ${linkColor[0]};
-                        }
-                        #customTag:hover {
-                          color: ${linkColor[1]};
-                        }
-                      `}</style>
-                      
-                    </a>
-                    
-                  </div>
+                      →
+                    </span>
+                  </Link>
                 </div>
               </div>
             </div>
-          </Link>
+          </div>
         ))}
       </div>
     </div>
