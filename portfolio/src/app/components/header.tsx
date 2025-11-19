@@ -57,9 +57,9 @@ const Header: React.FC<HeaderProps> = ({ themeColor }) => {
         </div>
       </div>
       <h3>
-        Web Developer and AI Researcher | Fintech/AI Intern @{" "}
-        <Link href="https://www.splenta.com/" target="__blank">
-          Splenta Systems
+        Web Developer and AI Researcher | AI Ambassador/Intern @{" "}
+        <Link href="https://www.inspiritai.com/" target="__blank">
+          Inspirit AI
         </Link>
       </h3>
 
