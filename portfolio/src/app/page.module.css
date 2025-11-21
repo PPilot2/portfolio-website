@@ -34,14 +34,23 @@
   width: 100%;
 }
 
-.headerContainer h1,
-.blogHeaderContainer h1 {
+.headerContainer h1 {
   font-weight: 450;
   overflow: hidden;
   font-size: clamp(2rem, 8vw, 3.5rem);
   white-space: nowrap;
   border-right: clamp(15px, 2vw, 30px) solid;
   animation: typing 1s steps(22) forwards, blink 1s step-end infinite;
+  width: fit-content;
+  max-width: 100%;
+}
+.blogHeaderContainer h1 {
+  font-weight: 450;
+  overflow: hidden;
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  white-space: nowrap;
+  border-right: clamp(15px, 2vw, 30px) solid;
+  animation: blink 1s step-end infinite;
   width: fit-content;
   max-width: 100%;
 }
