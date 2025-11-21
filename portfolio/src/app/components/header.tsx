@@ -57,10 +57,11 @@ const Header: React.FC<HeaderProps> = ({ themeColor }) => {
         </div>
       </div>
       <h3>
-        Web Developer and AI Researcher | Ambassador/Intern @{" "}
+        Web Developer and AI Researcher
+         {/* | Ambassador/Intern @{" "}
         <Link href="https://www.inspiritai.com/" target="__blank">
           Inspirit AI
-        </Link>
+        </Link> */}
       </h3>
 
       {showAlert && (
